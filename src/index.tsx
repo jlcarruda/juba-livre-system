@@ -1,6 +1,5 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import 'fontsource-roboto';
+import '@fontsource/roboto';
 import { CssBaseline } from '@material-ui/core';
 import Helmet from 'react-helmet';
 import { LoginPage } from './pages';
