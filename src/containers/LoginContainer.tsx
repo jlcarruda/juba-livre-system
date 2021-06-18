@@ -1,15 +1,21 @@
-import Button from '@material-ui/core/Button';
+import {
+  Theme, Button,
+} from '@material-ui/core';
 import { Component } from 'react';
+import { Form } from '../components/Form';
 
-export default class LoginContainer extends Component {
+interface LoginContainerProps {
+  theme: Theme;
+  className: string;
+}
+
+export default class LoginContainer extends Component<LoginContainerProps> {
   render() {
+    const { theme, className } = this.props;
     return (
-      <div>
-        <Button variant="contained" color="secondary">Login</Button>
-        <Button variant="contained" color="primary">
-          Register
-        </Button>
-      </div>
+      <Form marginTop={theme.spacing(1)}>
+        <Button type="submit" variant="contained" color="primary" fullWidth className={className}>Login</Button>
+      </Form>
     );
   }
 }

@@ -12,10 +12,12 @@ const styles = (theme: Theme) => createStyles({
   paper: {
     margin: theme.spacing(8, 4),
   },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+  },
 });
 
-type LoginPageProps = WithStyles<typeof styles>
-
+type LoginPageProps = WithStyles<typeof styles>;
 const LoginPage = withStyles(styles)(class extends Component<LoginPageProps> {
   render() {
     const { classes } = this.props;
@@ -23,8 +25,8 @@ const LoginPage = withStyles(styles)(class extends Component<LoginPageProps> {
       <Grid container component="main" className={classes.root}>
         <Grid item xs={false} sm={4} md={7} />
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-          <FormWrapper>
-            <LoginContainer />
+          <FormWrapper className={classes.paper}>
+            <LoginContainer className={classes.submit} />
           </FormWrapper>
         </Grid>
       </Grid>
